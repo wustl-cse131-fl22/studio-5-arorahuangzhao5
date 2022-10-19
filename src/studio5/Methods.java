@@ -1,5 +1,7 @@
 package studio5;
 
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -17,6 +19,8 @@ public class Methods {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
+		distance =  Math.sqrt((double)Math.pow((x2 - x1), 2) + (double)Math.pow((y2-y1),2));
+				
 		return distance;
 	}
 
@@ -34,17 +38,24 @@ public class Methods {
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
 		
+		Color blue = new Color (0,109,219);
+		StdDraw.setPenColor(blue);
+		StdDraw.filledCircle(x, y, (3.0/4.0)*radius);
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
 		
+		Color red = new Color (146,0,0);
+		StdDraw.setPenColor(red);
+		StdDraw.filledCircle(x, y, (1.0/2.0)*radius);
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
 
+		Color yellow = new Color (255,255,109);
+		StdDraw.setPenColor(yellow);
+		StdDraw.filledCircle(x, y, (1.0/4.0)*radius);
 		
 	}
 
@@ -63,6 +74,24 @@ public class Methods {
 		String result = "";
 		// TODO: Finish this method
 		
+		//toCharArray - wow - index 0, 1, 2 (w, o, w)
+		char[] charArray = source.toCharArray();
+		
+		for (int i = 0; i < charArray.length; i++ ) {
+			
+			if(charArray[i] == target) {
+				
+				result = result + replacement;
+				
+			} else
+				result = result + charArray[i];
+			
+		}
+		
+		//goes through word, first good so letter isn't matched, so yyou add it to string and then
+		//once you hit target it replaces it with replacement... go on.. return that
+		//result would be letter not changed (keeps adding as you go - changing)
+		
 		return result;
 	}
 
@@ -76,8 +105,21 @@ public class Methods {
 		int sum = 0;
 		// FIXME: Compute the sum of the values in an array
 		
+		for (int i = 0; i < values.length-1; i++) {
+			
+			if(i != values.length-1) {
+			sum = values[i] + values[i+1];
+			}
+			
+		}
+		
+		
 		return sum;
 	}
+	
+	
+	
+	
 
 	/**
 	 * Return an array of a given size filled with the provided value

@@ -13,6 +13,7 @@ import support.cse131.DrawCase;
  */
 public class DrawBullsEyesDebugApp {
 	public static void main(String[] args) {
+		
 		SwingUtilities.invokeLater(() -> {
 			for (DrawCase drawCase : DrawBullsEyes.getCases()) {
 				StdDraw.clear();
@@ -28,4 +29,7 @@ public class DrawBullsEyesDebugApp {
 			System.exit(0);
 		});
 	}
+	
+
+	
 }

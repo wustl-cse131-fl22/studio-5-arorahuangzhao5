@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  * Methods that test the distanceBetween() method
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class DistanceBetweenTest {
 
 	/**
@@ -61,7 +62,17 @@ public class DistanceBetweenTest {
 	public void testPointsD() {
 		// TODO: FIXME!  This test has an error
 		// Test that the distance between (0,0) and (30,40) is 50.0 (order of parameters matters!)
-		assertEquals(50.0, Methods.distanceBetween(0.0, 30.0, 0.0, 40.0), 1e-5);
+		assertEquals(50.0, Methods.distanceBetween(0.0, 0.0, 30.0, 40.0), 1e-5);
 	}
+	
+	@Test
+	public void testPointsE() {
+		
+		assertEquals(5.0, Methods.distanceBetween(8.0, 9.0, 5.0, 5.0), 1e-5);
+		
+	}
+	
+	
+	
 
 }
